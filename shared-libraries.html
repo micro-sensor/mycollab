@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
+
+    <title>MSANose Report</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">𝜇Sensor</a>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bad Smells
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html">Overview</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="shared-libraries.html">Shared Libraries</a></li>
+                            <li><a class="dropdown-item" href="unversioned-apis.html">Unversioned API</a></li>
+                            <li><a class="dropdown-item" href="shared-persistence.html">Shared Persistence</a></li>
+                            <li><a class="dropdown-item" href="inappropriate-service-intimacy.html">Inappropriate Service Intimacy (ISI)</a></li>
+                            <li><a class="dropdown-item" href="hardcoded-endpoints.html">Hardcoded Endpoints</a></li>
+                            <li><a class="dropdown-item" href="esb.html">Enterprise Service Bus Usage (ESB)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="p-5 mb-5">
+        <div class="bd-intro">
+            <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                <a class="btn btn-sm btn-bd-light mb-2 mb-md-0" href="https://github.com/edson-a-soares/msanose-action" title="View and edit this file on GitHub" target="_blank" rel="noopener">View More on GitHub</a>
+                <h2 class="bd-title" id="content">Shared Libraries (SL)</h2>
+            </div>
+            <p class="bd-lead">If microservices are coupled with a common library, that library should be refactored into a separate module. This reduces the fragility of the application by migrating the shared functionality behind a common, unchanging interface. This will make the system resistant to ripples from changes within the library.</p>
+        </div>
+        <hr/>
+
+        <section>
+            <div class="row">
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Library</th>
+                        <th>Dependencies</th>
+                        <th>Microservices</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>com.mycollab:mycollab-migration</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#com-mycollab-mycollab-migration">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=com-mycollab-mycollab-migration tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of com.mycollab:mycollab-migration</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services-community</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-app-community</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>org.junit.jupiter:junit-jupiter-api</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#org-junit-jupiter-junit-jupiter-api">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=org-junit-jupiter-junit-jupiter-api tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of org.junit.jupiter:junit-jupiter-api</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-core</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-test</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>javax.xml.bind:jaxb-api</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#javax-xml-bind-jaxb-api">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=javax-xml-bind-jaxb-api tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of javax.xml.bind:jaxb-api</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">com.mycollab:mycollab-parent-community</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-reporting</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>com.mycollab:mycollab-server-runner</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#com-mycollab-mycollab-server-runner">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=com-mycollab-mycollab-server-runner tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of com.mycollab:mycollab-server-runner</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-app-community</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-web</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>javax.servlet:javax.servlet-api</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#javax-servlet-javax-servlet-api">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=javax-servlet-javax-servlet-api tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of javax.servlet:javax.servlet-api</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-web</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-servlet</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>image4j:image4j</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image4j-image4j">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=image4j-image4j tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of image4j:image4j</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-core</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>com.mycollab:mycollab-config</td>
+                        <td>5</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#com-mycollab-mycollab-config">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=com-mycollab-mycollab-config tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of com.mycollab:mycollab-config</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-test</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-web</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-server-runner</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-servlet</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>com.mycollab:mycollab-core</td>
+                        <td>17</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#com-mycollab-mycollab-core">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=com-mycollab-mycollab-core tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of com.mycollab:mycollab-core</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services-community</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-localization</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-caching</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-template</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-jackrabbit</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-test</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-scheduler</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-config</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-servlet</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-migration</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-dao</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-web</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-esb</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-reporting</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-scheduler-community</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-server-runner</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>com.mycollab:mycollab-caching</td>
+                        <td>6</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#com-mycollab-mycollab-caching">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=com-mycollab-mycollab-caching tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of com.mycollab:mycollab-caching</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services-community</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-services</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-test</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-web</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-esb</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-servlet</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ch.qos.cal10n:cal10n-api</td>
+                        <td>2</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ch-qos-cal10n-cal10n-api">
+                                See
+                            </button>
+
+                            <div class="modal fade" id=ch-qos-cal10n-cal10n-api tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of ch.qos.cal10n:cal10n-api</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-core</li>
+                                                        <li class="list-group-item list-group-item-action">null:mycollab-localization</li>
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+    </div>
+
+
+    <div class="px-4">
+        <footer class="pt-5 my-5 text-muted border-top">𝜇Sensor &middot; &copy; 2022</footer>    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js" ></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
